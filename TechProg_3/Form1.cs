@@ -13,6 +13,7 @@ namespace TechProg_3
 {
     public partial class MDIParent : Form
     {
+        string folderName;
         public MDIParent()
         {
             InitializeComponent();
@@ -30,7 +31,8 @@ namespace TechProg_3
 
             if(folderDialog.ShowDialog(this)==DialogResult.OK)
             {
-                string folderName = folderDialog.SelectedPath;
+                listBox1.Items.Clear();
+                folderName = folderDialog.SelectedPath;
                 this.statusStrip1.Items[0].Text = folderName;
 
                 listBox1.Items.Clear();
@@ -65,6 +67,60 @@ namespace TechProg_3
         {
             int winCount = this.MdiChildren.Count();
             this.StatusWindowsCount.Text = "Открыть окно: " + Convert.ToString(winCount);
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            string FileName = listBox1.SelectedItem.ToString();
+            ChildForm Frm = new ChildForm(); 
+            Frm.MdiParent = this;
+            Frm.Width = (int)(this.Width * 0.6); 
+            Frm.Height = (int)(this.Height * 0.6); 
+            Frm.Text = "Изображение: " + FileName; 
+            Frm.LoadPicture(folderName + "\\" + FileName); 
+            
+            Frm.FormClosed += (obj, args) => ClosingForm(Frm);
+            Frm.Show(); 
+            CalculateWinCount(); 
+        }
+
+        private void MenuQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MenuCloseAll_Click(object sender, EventArgs e)
+        {
+            foreach(Form form in MdiChildren)
+            {
+                form.Close();
+            }
+        }
+
+        private void MenuCascade_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void MenuVertical_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void MenuHorizontal_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void MenuAboutAuthor_Click(object sender, EventArgs e)
+        {
+            AboutAuthor AA = new AboutAuthor();
+            AA.ShowDialog();
+        }
+
+        private void MenuAboutProgram_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

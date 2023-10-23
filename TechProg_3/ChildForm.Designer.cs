@@ -30,9 +30,9 @@
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.ViewingStyle = new System.Windows.Forms.ToolStripComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusPicParameters = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ViewingStyle = new System.Windows.Forms.ToolStripComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
@@ -58,6 +58,18 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(126, 22);
             this.toolStripLabel1.Text = "Способ отображения";
             // 
+            // ViewingStyle
+            // 
+            this.ViewingStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ViewingStyle.Items.AddRange(new object[] {
+            "Вписать",
+            "Растянуть",
+            "По центру",
+            "Авторазмер"});
+            this.ViewingStyle.Name = "ViewingStyle";
+            this.ViewingStyle.Size = new System.Drawing.Size(121, 25);
+            this.ViewingStyle.SelectedIndexChanged += new System.EventHandler(this.ViewingStyle_SelectedIndexChanged);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -74,17 +86,6 @@
             this.StatusPicParameters.Size = new System.Drawing.Size(148, 17);
             this.StatusPicParameters.Text = "Параметры отображения";
             // 
-            // ViewingStyle
-            // 
-            this.ViewingStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ViewingStyle.Items.AddRange(new object[] {
-            "Вписать",
-            "Растянуть",
-            "По центру",
-            "Авторазмер"});
-            this.ViewingStyle.Name = "ViewingStyle";
-            this.ViewingStyle.Size = new System.Drawing.Size(121, 25);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox1);
@@ -93,6 +94,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(606, 335);
             this.panel1.TabIndex = 2;
+            this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
             // pictureBox1
             // 
