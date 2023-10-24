@@ -63,6 +63,16 @@ namespace TechProg_3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ag4FCw0409c {
+            get {
+                object obj = ResourceManager.GetObject("ag4FCw0409c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imageres_1010 {
             get {
                 object obj = ResourceManager.GetObject("imageres_1010", resourceCulture);
@@ -96,6 +106,26 @@ namespace TechProg_3.Properties {
         internal static System.Drawing.Bitmap imageres_81 {
             get {
                 object obj = ResourceManager.GetObject("imageres_81", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kaskad {
+            get {
+                object obj = ResourceManager.GetObject("kaskad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zakryt_vse_okna {
+            get {
+                object obj = ResourceManager.GetObject("zakryt_vse_okna", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

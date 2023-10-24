@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -120,7 +121,15 @@ namespace TechProg_3
 
         private void MenuAboutProgram_Click(object sender, EventArgs e)
         {
-
+            string path = "Отчёт_Мороз.docx";
+            if(System.IO.File.Exists(path))
+            {
+                Process.Start(path);
+            }
+            else
+            {
+                MessageBox.Show("Текстовый документ не найден", "Ошибка" ,MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

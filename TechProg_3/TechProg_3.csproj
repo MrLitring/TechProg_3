@@ -110,5 +110,14 @@
   <ItemGroup>
     <None Include="Resources\imageres_5303.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ag4FCw0409c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kaskad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zakryt_vse_okna.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

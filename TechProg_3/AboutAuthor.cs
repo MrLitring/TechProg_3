@@ -15,6 +15,7 @@ namespace TechProg_3
         public AboutAuthor()
         {
             InitializeComponent();
+            this.pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }
